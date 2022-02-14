@@ -5,6 +5,7 @@ module.exports = {
   ],
   theme: {
     screens: {
+        phone: '840px',
         tablet: '960px',
         desktop: '1248px',
     },
@@ -22,9 +23,12 @@ module.exports = {
         lg: '0px 8px 20px 0px rgba(18, .16, .99, .0.06)',
     },
     fontSize: {
-        h1: ['6rem', { lineHeight:'130px', letterSpacing: '-0.05em' }],
-        h2: ['2.25rem', { lineHeight:'32px', letterSpacing: '0.05em'}],
-        h3: ['1.5rem', {lineHeight:'32px', letterSpacing: '0.50em'}],
+        mh1: ['2.5rem', { lineHeight:'50px', letterSpacing: '-0.05em' }],
+        mh2: ['2.25rem', { lineHeight:'32px', letterSpacing: '0.05em'}],
+        mh3: ['1.5rem', {lineHeight:'32px', letterSpacing: '0.50em'}],
+        dh1: ['6rem', { lineHeight:'130px', letterSpacing: '-0.05em' }],
+        dh2: ['2.25rem', { lineHeight:'32px', letterSpacing: '0.05em'}],
+        dh3: ['1.5rem', {lineHeight:'32px', letterSpacing: '0.50em'}],
     },
     fontFamily: {
         header: 'Satoshi-Black, sans-serif',

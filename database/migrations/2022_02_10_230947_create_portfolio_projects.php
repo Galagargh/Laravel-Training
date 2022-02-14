@@ -16,12 +16,15 @@ class CreatePortfolioProjects extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('excerpt');
+            $table->text('excerpt');
+            $table->string('color');
             $table->string('featuredImage');
             $table->longText('description');
             $table->integer('duration');
             $table->string('technologies');
             $table->timestamps();
+            $table->timestamp('published_at')->nullable();
+            $table->string('slug')->unique();
         });
     }
 

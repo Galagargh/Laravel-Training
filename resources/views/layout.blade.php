@@ -9,9 +9,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <title>Test</title>
 </head>
-<body class="font-body
-             desktop:max-w-2xl
-            ">
+<body class="font-body">
     <header class="font-header">
         @yield('banner')
     </header>

@@ -1,20 +1,28 @@
 @extends('layout')
 
-@section('banner')
-    <h1>My Blog</h1>
-@endsection
 
 @section('content')
     @foreach($projects as $project)
-        <article class="{{ $loop->even ? 'even' : '' }}">
-            <h1>
-                <a href="/posts/{{$project->id}}">
-                    {{$project->title}}
-                </a>
-            </h1>
-            <div>
-                {{$project->excerpt}}
+        <article class="grid grid-cols-2 grid-rows-3 {{$project->color}} projects">
+
+            <div class="flex flex-col projects-summ">
+                <h1 class="text-white tablet:text-dh1">
+                    <a href="/projects/{{$project->slug}}">
+                        {{$project->title}}
+                    </a>
+                </h1>
+                <div class="excerpt">
+                    <p class="white">{{$project->excerpt}}</p>
+                </div>
+                <div class="button">
+                    <a class="btn btn-primary btn-lg" href="/projects/{{$project->slug}}">View Project</a>
+                </div>
             </div>
+
+            <div class="flex projects-img">
+                <img class="" src="/{!! $project->featuredImage !!}" alt="{{$project->title}}">
+            </div>
+
         </article>
     @endforeach
 @endsection

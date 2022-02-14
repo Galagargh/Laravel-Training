@@ -14,6 +14,7 @@ use App\Models\Project;
 |
 */
 
+
 Route::get('/', function () {
 
     return view ('projects', [
@@ -24,15 +25,21 @@ Route::get('/', function () {
 
 Route::get('/basestyle', function () {
 
-    return view ('basestyle', []);
+    return view ('basestyle');
 
 });
 
-Route::get('/posts/{post}', function ($id) {
-
-    // Find a post by its slug and pass it to a view called post
+Route::get('/projects/{project}', function (Project $project) {    //post::where('slug', $post)->firstOrFail()
     return view('project', [
-        'project' => Project::findOrFail($id)
+        'project' => $project
     ]);
-
 });
+
+//Route::get('/posts/{post}', function ($id) {
+//
+//    // Find a post by its slug and pass it to a view called post
+//    return view('project', [
+//        'project' => Project::findOrFail($id)
+//    ]);
+//
+//});
