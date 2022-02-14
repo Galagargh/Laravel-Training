@@ -22,6 +22,12 @@ Route::get('/', function () {
 
 });
 
+Route::get('/basestyle', function () {
+
+    return view ('basestyle', []);
+
+});
+
 Route::get('/posts/{post}', function ($id) {
 
     // Find a post by its slug and pass it to a view called post

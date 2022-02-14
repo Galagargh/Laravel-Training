@@ -11,7 +11,7 @@
   box-sizing: border-box; /* 1 */
   border-width: 0; /* 2 */
   border-style: solid; /* 2 */
-  border-color: #e5e7eb; /* 2 */
+  border-color: currentColor; /* 2 */
 }
 
 ::before,
@@ -379,6 +379,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
+    @font-face {
+        font-family: 'Satoshi-Black';
+        src: url(/fonts/Satoshi-Black.woff2?b5013d854bb5a8e48651144002dcc6a7) format('woff2'),
+        url(/fonts/Satoshi-Black.woff?4261d202e1e9410db1bfa7a19ab6c372) format('woff'),
+        url(/fonts/Satoshi-Black.ttf?464354ba5a06467ecac56ec6be8e083b) format('truetype');
+        font-weight: 900;
+        font-display: swap;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'poppinslight';
+        src: url(/fonts/poppins-light-webfont.woff2?bc5843455e63fc46f933dfd0c14b4946) format('woff2'),
+        url(/fonts/poppins-light-webfont.woff?39d46301999a01fa2d1994a90fcbf568) format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'poppinsmedium';
+        src: url(/fonts/poppins-medium-webfont.woff2?39478fc3d22d0d9b3298be6db79c5bd8) format('woff2'),
+        url(/fonts/poppins-medium-webfont.woff?34ef95205d5b1a42bc5cd6f8bfa622e0) format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'poppinsregular';
+        src: url(/fonts/poppins-regular-webfont.woff2?2e2cacf7fd63526effccdb04d8496c36) format('woff2'),
+        url(/fonts/poppins-regular-webfont.woff?3b76eb1db7423b3ab834675f85580bed) format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 
 *, ::before, ::after {
   --tw-translate-x: 0;
@@ -423,5 +453,204 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-opacity:  ;
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
+}
+.fixed {
+  position: fixed;
+}
+.relative {
+  position: relative;
+}
+.top-0 {
+  top: 0px;
+}
+.right-0 {
+  right: 0px;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.ml-1 {
+  margin-left: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.ml-4 {
+  margin-left: 1rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.ml-12 {
+  margin-left: 3rem;
+}
+.-mt-px {
+  margin-top: -1px;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+.hidden {
+  display: none;
+}
+.h-5 {
+  height: 1.25rem;
+}
+.h-8 {
+  height: 2rem;
+}
+.h-16 {
+  height: 4rem;
+}
+.min-h-screen {
+  min-height: 100vh;
+}
+.w-5 {
+  width: 1.25rem;
+}
+.w-8 {
+  width: 2rem;
+}
+.w-auto {
+  width: auto;
+}
+.max-w-6xl {
+  max-width: 72rem;
+}
+.grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+.items-center {
+  align-items: center;
+}
+.justify-center {
+  justify-content: center;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.border-t {
+  border-top-width: 1px;
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.p-6 {
+  padding: 1.5rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.pt-8 {
+  padding-top: 2rem;
+}
+.text-center {
+  text-align: center;
+}
+.font-header {
+  font-family: Satoshi-Black, sans-serif;
+}
+.font-body {
+  font-family: poppinsregular, sans-serif;
+}
+.text-h1 {
+  font-size: 6rem;
+  line-height: 130px;
+  letter-spacing: -0.05em;
+}
+.text-h2 {
+  font-size: 2.25rem;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+}
+.text-h3 {
+  font-size: 1.5rem;
+  line-height: 32px;
+  letter-spacing: 0.50em;
+}
+.font-semibold {
+  font-weight: 600;
+}
+.leading-7 {
+  line-height: 1.75rem;
+}
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(153 196 234 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(53 53 52 / var(--tw-text-opacity));
+}
+.underline {
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+    background: white;
+    color: black;
+    margin: auto;
+}
+
+p{
+    line-height:1.6;
+}
+
+article + article {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #4a5568;
+}
+
+h2,h3{
+    margin: 50px 0;
+}
+
+h3{
+    text-transform: uppercase;
+}
+
+.project-points{
+    list-style: initial;
+    margin-left: 1rem;
+}
+
+@media (prefers-color-scheme: dark) {
+
+  .dark\:text-white {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+}
+
+@media (min-width: 1248px) {
+
+  .desktop\:max-w-2xl {
+    max-width: 42rem;
+  }
 }
 

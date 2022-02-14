@@ -1,4 +1,17 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/fonts/Poppins-Light.ttf": "/fonts/Poppins-Light.ttf",
+    "/fonts/Poppins-Medium.ttf": "/fonts/Poppins-Medium.ttf",
+    "/fonts/Poppins-Regular.ttf": "/fonts/Poppins-Regular.ttf",
+    "/fonts/Satoshi-Black.eot": "/fonts/Satoshi-Black.eot",
+    "/fonts/Satoshi-Black.ttf": "/fonts/Satoshi-Black.ttf",
+    "/fonts/Satoshi-Black.woff": "/fonts/Satoshi-Black.woff",
+    "/fonts/Satoshi-Black.woff2": "/fonts/Satoshi-Black.woff2",
+    "/fonts/poppins-light-webfont.woff": "/fonts/poppins-light-webfont.woff",
+    "/fonts/poppins-light-webfont.woff2": "/fonts/poppins-light-webfont.woff2",
+    "/fonts/poppins-medium-webfont.woff": "/fonts/poppins-medium-webfont.woff",
+    "/fonts/poppins-medium-webfont.woff2": "/fonts/poppins-medium-webfont.woff2",
+    "/fonts/poppins-regular-webfont.woff": "/fonts/poppins-regular-webfont.woff",
+    "/fonts/poppins-regular-webfont.woff2": "/fonts/poppins-regular-webfont.woff2"
 }
