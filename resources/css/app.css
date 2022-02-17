@@ -61,6 +61,10 @@
 .red{background-color:#E34C60;}
 .green{background-color:#9BC463;}
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background: white;
     color: black;
@@ -102,13 +106,13 @@ h3{
 }
 
 .projects{
-    height: 100vh;
+    min-height: 100vh;
     grid-template-rows: auto;
 }
 
 .projects:before {
     content: "";
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.02);
     position: absolute;
     width: 100%;
     height: calc(100% + 0px);
@@ -124,7 +128,7 @@ h3{
 
 .projects-img{
     position: relative;
-    right: 370px;
+    right: 440px;
     align-self:end;
     z-index: 0;
 }
@@ -134,7 +138,7 @@ h3{
 }
 
 .projects:nth-child(3n) > .projects-img{
-    right:250px;
+    right:50px;
 }
 
 .projects:nth-child(3n) > .projects-img img {
@@ -142,15 +146,30 @@ h3{
 }
 
 .projects:nth-child(4n) > .projects-img{
-    right:70px;
+    right:50px;
 }
 
 .projects:nth-child(4n) > .projects-img img{
     transform: scaleX(-1);
 }
 
+/* piggots description */
+.projects:nth-child(3n) > .projects-summ .excerpt{
+    width: 175%;
+}
+
+@media only screen and (min-width: 960px) {
+    .projects:nth-child(3n) > .projects-summ .excerpt{
+        width: 100%;
+    }
+}
+
 .projects:nth-child(1n) {
 
+}
+
+.project h1{
+    padding-top:25px;
 }
 
 .excerpt{
@@ -159,6 +178,10 @@ h3{
 
 .large-text{
     font-size:6rem !important;
+}
+
+.projects h1{
+    padding-top: 30px;
 }
 
 .btn{

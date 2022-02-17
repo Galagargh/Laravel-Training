@@ -1,6 +1,7 @@
 @extends('layout')
 
 
+
 @section('content')
     @foreach($projects as $project)
         <article class="grid grid-cols-2 grid-rows-3 {{$project->color}} projects">

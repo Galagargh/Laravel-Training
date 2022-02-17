@@ -23,14 +23,14 @@ Route::get('/', function () {
 
 });
 
-Route::get('/basestyle', function () {
+Route::get('basestyle', function () {
 
-    return view ('basestyle');
+    return view('basestyle');
 
 });
 
-Route::get('/projects/{project}', function (Project $project) {    //post::where('slug', $post)->firstOrFail()
-    return view('project', [
+Route::get('projects/{project:slug}', function (Project $project) {    //post::where('slug', $post)->firstOrFail()
+        return view('project', [
         'project' => $project
     ]);
 });
