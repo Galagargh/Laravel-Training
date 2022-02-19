@@ -4,7 +4,7 @@
 
 @section('content')
     @foreach($projects as $project)
-        <article class="grid grid-cols-2 grid-rows-3 {{$project->color}} projects">
+        <article class="grid grid-cols-2 grid-rows-3 bg-{{$project->color}} projects">
 
             <div class="flex flex-col projects-summ">
                 <h1 class="text-white tablet:text-dh1">

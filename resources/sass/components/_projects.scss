@@ -1,0 +1,80 @@
+/*
+*   Projects Component
+ */
+
+.projects{
+    min-height: 100vh;
+    grid-template-rows: auto;
+
+    &:before{
+        content: "";
+        background-color: rgba(0,0,0,0.02);
+        position: absolute;
+        width: 100%;
+        height: calc(100% + 0px);
+        z-index: 1;
+    }
+
+    h1{
+        padding-top: 30px;
+    }
+}
+
+.projects-summ{
+    align-content: space-between;
+    justify-content: center;
+    padding-left: 3rem;
+    z-index: 1;
+
+    .excerpt{
+        padding: 30px 0;
+    }
+}
+
+.projects-img{
+    position: relative;
+    right: 440px;
+    align-self:end;
+    z-index: 0;
+
+    img{
+        max-width: fit-content !important;
+    }
+}
+
+/*      fix this    */
+
+/*  Piggots description  */
+.projects:nth-child(3n) > {
+
+    .projects-summ .excerpt{
+        width: 175%;
+    }
+    .projects-img {
+        right:50px;
+
+        img{
+            transform: scaleX(-1);
+        }
+    }
+}
+
+/*      Acentic     */
+.projects:nth-child(4n) > {
+    .projects-img{
+        right:50px;
+
+        img{
+            transform: scaleX(-1);
+        }
+    }
+}
+
+/*  Piggotts Responsive  */
+@media only screen and (min-width: 960px) {
+    .projects:nth-child(3n) > .projects-summ .excerpt{
+        width: 100%;
+    }
+}
+
+

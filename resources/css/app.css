@@ -1,55 +1,4 @@
-@tailwind base;
 
-@layer base{
-    @font-face {
-        font-family: 'Satoshi-Black';
-        src: url('../fonts/Satoshi-Black.woff2') format('woff2'),
-        url('../fonts/Satoshi-Black.woff') format('woff'),
-        url('../fonts/Satoshi-Black.ttf') format('truetype');
-        font-weight: 900;
-        font-display: swap;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'poppinslight';
-        src: url('../fonts/poppins-light-webfont.woff2') format('woff2'),
-        url('../fonts/poppins-light-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'poppinsmedium';
-        src: url('../fonts/poppins-medium-webfont.woff2') format('woff2'),
-        url('../fonts/poppins-medium-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'poppinsregular';
-        src: url('../fonts/poppins-regular-webfont.woff2') format('woff2'),
-        url('../fonts/poppins-regular-webfont.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    h1{
-        @apply font-header;
-        @apply text-mh1;
-    }
-    h2{
-        @apply font-header;
-        @apply text-mh2;
-    }
-    h3{
-        @apply font-header;
-        @apply text-mh3;
-    }
-    p {
-        @apply text-black;
-    }
-}
-
-@tailwind components;
-@tailwind utilities;
 
 .white{color:white;}
 
@@ -102,7 +51,7 @@ h3{
 
 .project-points{
     list-style: initial;
-    margin-left: 1rem;
+    margin-left: 1.2rem;
 }
 
 .projects{

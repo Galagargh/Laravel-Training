@@ -1,0 +1,101 @@
+@tailwind base;
+
+@layer base{
+
+    @font-face {
+        font-family: 'Satoshi-Black';
+        src: url('../../fonts/Satoshi-Black.woff2') format('woff2'),
+        url('../../fonts/Satoshi-Black.woff') format('woff');
+        font-weight: 900;
+        font-display: swap;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'poppinslight';
+        src: url('../../fonts/poppins-light-webfont.woff2') format('woff2'),
+        url('../../fonts/poppins-light-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'poppinsmedium';
+        src: url('../../fonts/poppins-medium-webfont.woff2') format('woff2'),
+        url('../../fonts/poppins-medium-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'poppinsregular';
+        src: url('../../fonts/poppins-regular-webfont.woff2') format('woff2'),
+        url('../../fonts/poppins-regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    h1{
+        @apply font-header;
+        @apply text-mh1;
+    }
+    h2{
+        @apply font-header;
+        @apply text-mh2;
+    }
+    h3{
+        @apply font-header;
+        @apply text-mh3;
+    }
+    p {
+        @apply text-black;
+    }
+}
+
+@tailwind components;
+@tailwind utilities;
+
+/*
+*   Base Styling
+ */
+
+$white: #fff;
+$blue: #6AC2EE;
+$red: #E34C60;
+$green: #9BC463;
+
+.white{color:white;}
+
+.p-blue{color:$blue;}
+.p-red{color:$red;}
+.p-green{color:$green;}
+
+.bg-blue{background-color:$blue;}
+.bg-red{background-color:$red;}
+.bg-green{background-color:$green;}
+
+
+html{
+    overflow-x: hidden;
+}
+
+h1{
+    font-size: 2rem;
+}
+
+h2,h3{
+    margin: 50px 0;
+}
+
+h3{
+    text-transform: uppercase;
+}
+
+p{
+    line-height:1.6;
+}
+
+.ul{
+    list-style: initial;
+    margin-left: 1.2rem;
+}
+
+.large-text{
+    font-size:6rem !important;
+}
