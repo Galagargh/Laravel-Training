@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section ('content')
+
 <div class="max-w-screen-phone desktop:max-w-xl tablet:max-w-4xl mx-auto flex-auto flex-col">
+
     <article class="project flex flex-auto flex-col">
         <h1 class="tablet:text-dh1 p-{{$project->color}}">{!! $project->title !!}</h1>
 
@@ -15,7 +17,9 @@
         </div>
         <a class="p-{{$project->color}} back" href="/"><< Go back</a>
     </article>
+
 </div>
+
 @endsection
 
 

@@ -5,7 +5,8 @@
 @endsection
 
 @section ('content')
-<div class="mx-auto max-w-xl">
+<div class="mx-auto max-w-xl app">
+
     <h1 class="text-blue">This is the project Title and is H1</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur deleniti excepturi hic illo nulla officia
         quae, saepe sed suscipit voluptate. Aliquam aperiam culpa debitis deleniti ducimus eius esse est excepturi iure
