@@ -1,18 +1,23 @@
 @extends('layout')
 
-
-
 @section('content')
-    @foreach($projects as $project)
 
-        <project-overview color="{{$project->color}}"
-                          slug="{{$project->slug}}"
-                          title="{{$project->title}}"
-                          excerpt="{{$project->excerpt}}"
-                          image="{{$project->featuredImage}}">
+    @php
+        $highlighted = 0;
+        $projectSpotlight = $projects[$highlighted];
+    @endphp
+
+        <project-overview @next-project="cycleNext"
+                          @prev-project="cyclePrev"
+                          v-model="$projectSpotlight"
+                          id="{{$projectSpotlight->id}}"
+                          color="{{$projectSpotlight->color}}"
+                          slug="{{$projectSpotlight->slug}}"
+                          title="{{$projectSpotlight->title}}"
+                          excerpt="{{$projectSpotlight->excerpt}}"
+                          image="{{$projectSpotlight->featuredImage}}">
         </project-overview>
 
-    @endforeach
 @endsection
 
 

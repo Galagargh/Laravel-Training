@@ -474,27 +474,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.container {
-  width: 100%;
-}
-@media (min-width: 840px) {
-
-  .container {
-    max-width: 840px;
-  }
-}
-@media (min-width: 960px) {
-
-  .container {
-    max-width: 960px;
-  }
-}
-@media (min-width: 1248px) {
-
-  .container {
-    max-width: 1248px;
-  }
-}
 .fixed {
   position: fixed;
 }
@@ -749,6 +728,17 @@ p {
   font-size: 1.25rem;
   line-height: 1.5;
   border-radius: 0.3rem;
+}
+
+.nextProj {
+  right: 50px;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: white;
+  z-index: 5;
 }
 
 /*

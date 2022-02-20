@@ -20,17 +20,35 @@
             <img class="" :src="image" :alt="title">
         </div>
 
+        <a v-on:click="nextProject(id)">
+            <button class="nextProj bg-white position-absolute rounded-circle right-50">
+                <span>></span>
+            </button>
+        </a>
+
     </article>
 </template>
 
 <script>
     export default{
         props: {
+            id: String,
             color: String,
             slug: String,
             title: String,
             excerpt: String,
             image: String
+        },
+        methods: {
+            nextProject($var) {
+                this.id++;
+                console.log(this.id);
+                this.$emit('next-project', this.id)
+            },
+            prevProject($var) {
+                this.id--;
+                this.$emit('prev-project', this.id)
+            }
         }
     }
 </script>

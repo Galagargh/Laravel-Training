@@ -29,7 +29,7 @@ Vue.component('project-overview', require('./components/ProjectOverview.vue').de
 
 window.addEventListener('load', function () {
     const app = new Vue({
-        el: '#app',
+        el: '#app'
     });
 })
 
