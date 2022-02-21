@@ -17,7 +17,7 @@
         </div>
 
         <div class="flex projects-img right-0 phone:right-[440px]">
-            <img class="max-w-[100%] phone:max-w-[initial] tablet:w-fit object-contain" :src="image" :alt="title">
+            <img class="max-w-[100%] phone:max-w-[initial] tablet:w-fit object-cover" :src="image" :alt="title">
         </div>
 
     </article>

@@ -27950,7 +27950,7 @@ var render = function () {
         [
           _c("img", {
             staticClass:
-              "max-w-[100%] phone:max-w-[initial] tablet:w-fit object-contain",
+              "max-w-[100%] phone:max-w-[initial] tablet:w-fit object-cover",
             attrs: { src: _vm.image, alt: _vm.title },
           }),
         ]
