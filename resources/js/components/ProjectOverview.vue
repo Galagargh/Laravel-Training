@@ -1,8 +1,8 @@
 
 <template>
-    <article class="grid grid-cols-2 grid-rows-3 projects" :class=" 'bg-'+color ">
+    <article class="grid projects phone:grid-cols-2" :class=" 'bg-'+color ">
 
-        <div class="flex flex-col projects-summ">
+        <div class="flex mx-8 tablet:mx-12 flex-col projects-summ">
             <h1 class="white tablet:text-dh1">
                 <a :href="/projects/+slug">
                     {{ title }}
@@ -16,8 +16,8 @@
             </div>
         </div>
 
-        <div class="flex projects-img">
-            <img class="" :src="image" :alt="title">
+        <div class="flex projects-img right-0 phone:right-[440px]">
+            <img class="max-w-[100%] phone:max-w-[initial] tablet:w-fit object-contain" :src="image" :alt="title">
         </div>
 
     </article>

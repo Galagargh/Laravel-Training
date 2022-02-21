@@ -8,7 +8,7 @@
 
     &:before{
         content: "";
-        background-color: rgba(0,0,0,0.02);
+        // background-color: rgba(0,0,0,0.02);
         position: absolute;
         width: 100%;
         height: calc(100% + 0px);
@@ -23,7 +23,7 @@
 .projects-summ{
     align-content: space-between;
     justify-content: center;
-    padding-left: 3rem;
+    //padding-left: 3rem;
     z-index: 1;
 
     .excerpt{
@@ -33,12 +33,12 @@
 
 .projects-img{
     position: relative;
-    right: 440px;
+    //right: 440px;
     align-self:end;
     z-index: 0;
 
     img{
-        max-width: fit-content !important;
+        //max-width: fit-content !important;
     }
 }
 
@@ -48,10 +48,10 @@
 .projects:nth-child(3n) > {
 
     .projects-summ .excerpt{
-        width: 175%;
+        //width: 175%;
     }
     .projects-img {
-        right:50px;
+        right:0px;
 
         img{
             transform: scaleX(-1);
@@ -62,7 +62,7 @@
 /*      Acentic     */
 .projects:nth-child(4n) > {
     .projects-img{
-        right:50px;
+        right:0px;
 
         img{
             transform: scaleX(-1);
