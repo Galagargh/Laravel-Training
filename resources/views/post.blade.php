@@ -2,10 +2,10 @@
 
 @section ('content')
     <article>
-        <h1>{!! $project->title !!}</h1>
+        <h2>{!! $post->title !!}</h2>
 
         <div>
-            {!! $project->description !!}
+            {!! $post->body !!}
         </div>
 
     </article>

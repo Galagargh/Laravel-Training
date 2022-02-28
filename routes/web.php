@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Project;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,17 +16,14 @@ use App\Models\Project;
 
 Route::get('/', function () {
 
-    return view ('projects', [
-        'projects' => Project::all()
+    return view ('posts', [
+        'posts' => Post::all()
     ]);
 
 });
 
-Route::get('/posts/{post}', function ($id) {
-
-    // Find a post by its slug and pass it to a view called post
-    return view('project', [
-        'project' => Project::findOrFail($id)
+Route::get('/posts/{post:slug}', function (Post $post) {    //post::where('slug', $post)->firstOrFail()
+    return view('post', [
+        'post' => $post
     ]);
-
 });

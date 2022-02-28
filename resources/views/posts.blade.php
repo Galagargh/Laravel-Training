@@ -5,15 +5,15 @@
 @endsection
 
 @section('content')
-    @foreach($projects as $project)
+    @foreach($posts as $post)
         <article class="{{ $loop->even ? 'even' : '' }}">
             <h1>
-                <a href="/posts/{{$project->id}}">
-                    {{$project->title}}
+                <a href="/posts/{{$post->slug}}">
+                    {{$post->title}}
                 </a>
             </h1>
             <div>
-                {{$project->excerpt}}
+                {{$post->excerpt}}
             </div>
         </article>
     @endforeach
