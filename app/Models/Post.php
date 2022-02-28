@@ -17,6 +17,12 @@ class Post extends Model
     //  defined here is what cannot be fillable
     protected $guarded = ['id'];
 
+    // Declaring an eloquent relationship
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
     //  when leaving an empty array this disables mass
     //  assignment completely
     //    protected $guarded = [];
