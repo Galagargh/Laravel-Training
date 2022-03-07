@@ -17,6 +17,10 @@ class Post extends Model
     //  defined here is what cannot be fillable
     protected $guarded = ['id'];
 
+    // assigning with value means you can define the default
+    // for every post query you perform
+    protected $with = ['category', 'author'];
+
     // Declaring an eloquent relationship
     public function category()
     {
@@ -26,4 +30,9 @@ class Post extends Model
     //  when leaving an empty array this disables mass
     //  assignment completely
     //    protected $guarded = [];
+
+    public function author() // class names matter, Laravel assumes foreign key is author_id
+    {
+        return $this->belongsTo(User::class, 'user_id'); //specify in parameters foreign key is not author_id it's user_id
+    }
 }

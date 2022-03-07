@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Category;
@@ -21,9 +22,11 @@ Route::get('/', function () {
         logger($query->sql, $query->bindings);
     });
 
-
+    // Eager loading as part of a new query
+    //
     return view ('posts', [
-        'posts' => Post::with('category')->get()
+        'posts' => Post::latest()->get(),
+        'categories' => Category::all()
     ]);
 
 });
@@ -33,15 +36,25 @@ Route::get('/', function () {
 Route::get('/posts/{post:slug}', function (Post $post) {    //post::where('slug', $post)->firstOrFail()
 
     return view('post', [
-        'post' => $post
+        'post' => $post,
     ]);
 });
 
-
+// when working on an existing model, but wanting to eager load,
+// use load to solve n+1 problem when loading
 
 Route::get('/categories/{category:slug}', function (Category $category){
     return view('posts', [
-        'posts' => $category->posts
+        'posts' => $category->posts,
+        'currentCategory' => $category,
+        'categories' => Category::all()
+    ]);
+});
+
+Route::get('/authors/{author:username}', function (User $author){
+    return view('posts', [
+        'posts' => $author->posts,
+        'categories' => Category::all()
     ]);
 });
 
