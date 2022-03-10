@@ -1,6 +1,4 @@
-@extends('/components/layout')
-
-@section('content')
+<x-layout>
 
 @include('_posts-header')
 
@@ -13,6 +11,7 @@
 @endif
 
 </main>
-@endsection
+
+</x-layout>
 
 

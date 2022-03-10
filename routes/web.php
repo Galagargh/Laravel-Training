@@ -17,19 +17,27 @@ use App\Models\Category;
 */
 
 Route::get('/', function () {
+    $posts = Post::latest();
 
-    \Illuminate\Support\Facades\DB::listen(function ($query) {
-        logger($query->sql, $query->bindings);
-    });
+    if(request('search')){
+        $posts
+            ->where('title', 'like', '%' . request('search') . '%')
+            ->orWhere('body', 'like', '%' . request('search') . '%');
+    }
+
+    // logging
+//    \Illuminate\Support\Facades\DB::listen(function ($query) {
+//        logger($query->sql, $query->bindings);
+//    });
 
     // Eager loading as part of a new query
     //
     return view ('posts', [
-        'posts' => Post::latest()->get(),
+        'posts' => $posts->get(),
         'categories' => Category::all()
     ]);
 
-});
+})->name('home');
 
 //  get post from slug
 //Route::get('/posts/{post:slug}
@@ -49,7 +57,7 @@ Route::get('/categories/{category:slug}', function (Category $category){
         'currentCategory' => $category,
         'categories' => Category::all()
     ]);
-});
+})->name('category');
 
 Route::get('/authors/{author:username}', function (User $author){
     return view('posts', [
