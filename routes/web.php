@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
@@ -16,37 +17,10 @@ use App\Models\Category;
 |
 */
 
-Route::get('/', function () {
-    $posts = Post::latest();
+Route::get('/', [PostController::class, 'index'])->name('home');
 
-    if(request('search')){
-        $posts
-            ->where('title', 'like', '%' . request('search') . '%')
-            ->orWhere('body', 'like', '%' . request('search') . '%');
-    }
 
-    // logging
-//    \Illuminate\Support\Facades\DB::listen(function ($query) {
-//        logger($query->sql, $query->bindings);
-//    });
-
-    // Eager loading as part of a new query
-    //
-    return view ('posts', [
-        'posts' => $posts->get(),
-        'categories' => Category::all()
-    ]);
-
-})->name('home');
-
-//  get post from slug
-//Route::get('/posts/{post:slug}
-Route::get('/posts/{post:slug}', function (Post $post) {    //post::where('slug', $post)->firstOrFail()
-
-    return view('post', [
-        'post' => $post,
-    ]);
-});
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 // when working on an existing model, but wanting to eager load,
 // use load to solve n+1 problem when loading
