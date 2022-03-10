@@ -18,12 +18,8 @@ use App\Models\Category;
 */
 
 Route::get('/', [PostController::class, 'index'])->name('home');
-
-
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
-// when working on an existing model, but wanting to eager load,
-// use load to solve n+1 problem when loading
 
 Route::get('/categories/{category:slug}', function (Category $category){
     return view('posts', [

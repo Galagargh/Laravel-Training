@@ -27,6 +27,15 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function scopeFilter($query) //Post::newQuery()->filter()
+    {
+        if(request('search')){
+            $query
+                ->where('title', 'like', '%' . request('search') . '%')
+                ->orWhere('body', 'like', '%' . request('search') . '%');
+        }
+    }
+
     //  when leaving an empty array this disables mass
     //  assignment completely
     //    protected $guarded = [];
