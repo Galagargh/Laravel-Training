@@ -15,7 +15,7 @@ class Post extends Model
 
     //  guarded works in the opposite way, so the only thing
     //  defined here is what cannot be fillable
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     // assigning with value means you can define the default
     // for every post query you perform
@@ -27,13 +27,26 @@ class Post extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function scopeFilter($query) //Post::newQuery()->filter()
+    public function scopeFilter($query, array $filters)
     {
-        if(request('search')){
-            $query
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('body', 'like', '%' . request('search') . '%');
-        }
+        $query->when($filters['search'] ?? false, fn($query, $search)=>
+            $query->where(fn($query) =>
+                $query->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%')
+            )
+        );
+
+        $query->when($filters['category'] ?? false, function($query, $category){
+            $query->whereHas('category', fn ($query) =>
+                $query->where('slug', $category)
+            );
+        });
+
+        $query->when($filters['author'] ?? false, function($query, $author){
+            $query->whereHas('author', fn ($query) =>
+            $query->where('username', $author)
+            );
+        });
     }
 
     //  when leaving an empty array this disables mass
