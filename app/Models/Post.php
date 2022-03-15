@@ -21,11 +21,6 @@ class Post extends Model
     // for every post query you perform
     protected $with = ['category', 'author'];
 
-    // Declaring an eloquent relationship
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
 
     public function scopeFilter($query, array $filters)
     {
@@ -49,9 +44,15 @@ class Post extends Model
         });
     }
 
-    //  when leaving an empty array this disables mass
-    //  assignment completely
-    //    protected $guarded = [];
+    public function comments() // class names matter, Laravel assumes foreign key is author_id
+    {
+        return $this->hasMany(Comment::class); //specify in parameters foreign key is not author_id it's user_id
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 
     public function author() // class names matter, Laravel assumes foreign key is author_id
     {

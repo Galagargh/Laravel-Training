@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +18,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         // only required if database is not refreshed at start
          User::truncate();
          Post::truncate();
@@ -32,6 +35,7 @@ class DatabaseSeeder extends Seeder
              'user_id' => $user->id
          ]);
 
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
  //
 // Manually set seeder values without factory
 // Kept for reference
