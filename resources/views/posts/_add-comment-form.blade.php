@@ -9,19 +9,19 @@
             </header>
 
             <div class="mt-6">
-                                    <textarea name="body"
-                                              class="w-full text-small focus:outline-none focus:ring"
-                                              rows="5"
-                                              placeholder="Quick, think of something to say!"
-                                              required>
-                                    </textarea>
+                <textarea name="body"
+                          class="w-full text-small focus:outline-none focus:ring"
+                          rows="5"
+                          placeholder="Quick, think of something to say!"
+                          required>
+                </textarea>
 
                 @error('body')
                 <span class="text-xs text-red-500">{{ $message }}</span>
                 @enderror
             </div>
 
-            <x-submit-button>Post</x-submit-button>
+            <x-form.button>Post</x-form.button>
         </form>
     </x-panel>
 @else
